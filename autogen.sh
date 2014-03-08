@@ -1,5 +1,10 @@
 #!/bin/sh
-libtoolize
+export distr=`uname`
+if [ $distr = "Darwin" ];then
+  glibtoolize
+else
+  libtoolize
+fi
 aclocal
 autoconf
 autoheader
